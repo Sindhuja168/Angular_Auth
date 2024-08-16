@@ -1,0 +1,215 @@
+/* main.component.css */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../assets/carbackgroundimage.jfif') no-repeat center center fixed; /* Update with your image path */
+  background-size: cover;
+  overflow: hidden;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 1100px; /* Adjusted width */
+  transition: all 0.5s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 500px; /* Fixed width */
+  min-height: 600px; /* Fixed height */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px; /* Add some space between the cards */
+}
+
+.initial-card {
+  z-index: 2;
+}
+
+.login-card,
+.sign-up-card {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-container.login .initial-card,
+.card-container.signUp .initial-card {
+  transform: translateX(-50%);
+}
+
+.card-container.login .login-card,
+.card-container.signUp .sign-up-card {
+  opacity: 1;
+  transform: translateX(50%);
+  z-index: 2;
+}
+
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 20px;
+}
+
+.card-image {
+  width: 150px; /* Increased size */
+  height: 150px; /* Increased size */
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-login button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.social-login img {
+  width: 24px;
+  height: 24px;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+    min-height: unset;
+  }
+
+  .card-container.login .initial-card,
+  .card-container.signUp .initial-card {
+    transform: translateX(0);
+  }
+
+  .login-card,
+  .sign-up-card {
+    position: relative;
+    right: 0;
+    opacity: 1;
+    max-width: 100%;
+  }
+}

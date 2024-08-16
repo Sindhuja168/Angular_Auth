@@ -1,0 +1,9 @@
+/* app.component.css */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6B73FF 10%, #000DFF 100%);
+  }
+  

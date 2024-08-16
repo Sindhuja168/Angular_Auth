@@ -1,0 +1,198 @@
+/* ------------------------------------ Click on login and Sign Up to change and view the effect
+--------------------------------------- */
+
+* {
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.cotn_principal {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  background: #cfd8dc; /* Fallback color */
+  background: url('../../assets/hd-wallpapers.jpg') no-repeat center center fixed; /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire area */
+  justify-content: center; /* Center the container */
+  align-items: center;
+}
+
+.card {
+  box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 300px; /* Initial small size */
+  height: auto;
+  min-height: 200px; /* Initial small height */
+  transition: all 0.5s; /* Smooth transition for resizing */
+  overflow: hidden; /* Ensure content stays within bounds */
+  position: relative;
+}
+
+.card.expanded {
+  max-width: 400px; /* Expanded size */
+  min-height: 450px; /* Expanded height */
+}
+
+.cont_info_log_sign_up {
+  background-color: rgba(120, 144, 156, 0.55);
+  height: 100%; /* Make sure it takes full height of the card */
+}
+
+.cont_ba_opcitiy > h2 {
+  font-weight: 600;
+  color: #141010;
+}
+
+.cont_ba_opcitiy > p {
+  font-weight: 400;
+  margin-top: 15px;
+  color: #1d1a1a;
+}
+
+.btn_login,
+.btn_sign_up,
+.btn_forgot_password,
+.btn_back {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn_login {
+  background-color: #379191;
+}
+
+.btn_sign_up,
+.btn_back {
+  background-color: #b22a28;
+}
+
+.btn_forgot_password {
+  background-color: #379191;
+}
+
+.form__group {
+  margin-bottom: 15px; /* Adjust space between input boxes */
+  position: relative;
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+  width: 80%; /* Consistent width */
+  margin: 0 auto;
+}
+
+.form__input:focus {
+  border-bottom: 0.3rem solid #379191;
+}
+
+.form__input:placeholder-shown {
+  color: #aaa;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.cont_forms {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px; /* Match the max-width of the card */
+  height: auto;
+  min-height: 450px; /* Match the minimum height of the card */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  z-index: 10;
+  box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+
+.cont_forms.active {
+  display: block;
+  opacity: 1;
+}
+
+.cont_img_back_ {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../assets/hd car1.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  animation: animar_fondo 10s linear infinite alternate;
+}
+
+@-webkit-keyframes animar_fondo {
+  from {
+    -webkit-transform: scale(1) translate(0px);
+    transform: scale(1) translate(0px);
+  }
+  to {
+    -webkit-transform: scale(1.2) translate(0px);
+    transform: scale(1.2) translate(0px);
+  }
+}
+
+@keyframes animar_fondo {
+  from {
+    transform: scale(1) translate(0px);
+  }
+  to {
+    transform: scale(1.2) translate(0px);
+  }
+}
+
+.cont_form_login,
+.cont_form_sign_up,
+.cont_form_forgot_password {
+  position: relative; /* Changed from absolute to relative */
+  opacity: 0;
+  display: none;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.cont_forms_active_login .cont_form_login,
+.cont_forms_active_sign_up .cont_form_sign_up,
+.cont_forms_active_forgot_password .cont_form_forgot_password {
+  opacity: 1;
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .cont_info_log_sign_up {
+    width: 100%;
+  }
+
+  .cont_forms {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+}
